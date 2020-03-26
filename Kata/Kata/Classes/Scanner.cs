@@ -18,7 +18,7 @@ namespace Kata.Classes
             }
             var _priceFactory = new PriceFactory(item);
             var price = _priceFactory.GetDiscount();
-            return Math.Round(item.Quantity * price,1);
+            return Math.Round(price,2);
         }
     }
 }

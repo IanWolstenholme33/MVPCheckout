@@ -8,7 +8,12 @@ namespace Kata
     {
         private Scanner _scanner;
         private Item _item;
-     
+        //to do or refactor ideas
+        //introduce the capability to scan multiple items
+        //introduce more dependency injection with a new interface probably a discount interface using niject to derive the class.
+        //introduce a front end to be able to scan items.
+        //add the possibility eg a look up file database or a lookup file maybe
+
         public Checkout(Item item)
         {
             this._item = item;
