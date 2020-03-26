@@ -10,7 +10,7 @@ namespace KataTest
         private const decimal A99_QTY_THREE_TOTAL = 1.3m;
 
         [Test]
-        public void TestDiscountSuccuss()
+        public void TestDiscountSuccess()
         {
             Item _item = new Item();
             _item.Product = ProductEnum.A99;

@@ -1,4 +1,5 @@
 ﻿using Kata.Enum;
+using Kata.Factory;
 using Kata.Interfaces;
 using Kata.Model;
 using System;
@@ -11,16 +12,9 @@ namespace Kata.Classes
     {
         public decimal GetPrice(Item item)
         {
-            if (item.Product == ProductEnum.A99 && item.Quantity == 3)
-            {
-                return Convert.ToDecimal(1.30);
-            }
-            else if (item.Product == ProductEnum.A99 && item.Quantity < 3)
-            {
-                return Convert.ToDecimal(0.50 * item.Quantity); 
-            }
-
-            return 0;
+            var _priceFactory = new PriceFactory(item);
+            var price = _priceFactory.GetDiscount();
+            return Math.Round(item.Quantity * price,1);
         }
     }
 }
