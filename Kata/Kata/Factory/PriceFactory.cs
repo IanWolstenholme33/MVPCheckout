@@ -8,22 +8,22 @@ namespace Kata.Factory
 {
     public class PriceFactory
     {
-        private Item item;
+        private Item _item;
 
         public PriceFactory(Item item)
         {
-            this.item = item;
+            this._item = item;
         }
 
         public decimal GetDiscount()
         {
-            if (item.Product == ProductEnum.A99 && item.Quantity == 3)
+            if (_item.Product == ProductEnum.A99 && _item.Quantity == 3)
             {
-                return Convert.ToDecimal(1.30 / item.Quantity);
+                return Convert.ToDecimal(1.30 / _item.Quantity);
             }
-            else if (item.Product == ProductEnum.A99 && item.Quantity < 3)
+            else if (_item.Product == ProductEnum.A99 && _item.Quantity < 3)
             {
-                return Convert.ToDecimal(0.50 * item.Quantity);
+                return Convert.ToDecimal(0.50 * _item.Quantity);
             }
 
             return 0m;

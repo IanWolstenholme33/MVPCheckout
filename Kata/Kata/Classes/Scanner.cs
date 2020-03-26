@@ -12,6 +12,10 @@ namespace Kata.Classes
     {
         public decimal GetPrice(Item item)
         {
+            if (item == null || item == default(Item))
+            {
+                return 0m;
+            }
             var _priceFactory = new PriceFactory(item);
             var price = _priceFactory.GetDiscount();
             return Math.Round(item.Quantity * price,1);
