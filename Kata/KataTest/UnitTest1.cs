@@ -1,4 +1,5 @@
 using Kata.Classes;
+using Kata.Enum;
 using Kata.Model;
 using NUnit.Framework;
 
@@ -12,7 +13,7 @@ namespace KataTest
         public void TestDiscountSuccuss()
         {
             Item _item = new Item();
-            _item.Product = "A99";
+            _item.Product = ProductEnum.A99;
             _item.Quantity = 3;
             var _scan = new Scanner();
             decimal _totalprice = _scan.GetPrice(_item);
